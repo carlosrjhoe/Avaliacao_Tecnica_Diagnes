@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Campo, Endereco
+from .models import Cadastro_medicos
 
 # Register your models here.
-admin.site.register(Campo)
-admin.site.register(Endereco)
+admin.site.register(Cadastro_medicos)

@@ -1,30 +1,20 @@
 from django.views.generic.edit import CreateView, UpdateView
-from .models import Campo, Endereco
+from .models import Cadastro_medicos
 from django.urls import reverse_lazy
 
 # Create your views here.
-class CampoCreate(CreateView):
-    model = Campo
-    fields = ['nome', 'telefone','email','especialidade',]
-    template_name = 'paginas/index.html'
+class MedicosCreate(CreateView):
+    model = Cadastro_medicos
+    fields = ['nome', 'telefone','email','especialidade','cep','logradouro','numero','bairro','cidade','estado',]
+    template_name = 'cadastro/form.html'
     success_url = reverse_lazy('index')
     
-class EnderecoCreate(CreateView):
-    model = Campo
-    fields = ['cep','logradouro','numero','bairro','cidade','estado',]
-    template_name = 'paginas/index.html'
-    success_url = reverse_lazy('index')
     
 ################### UPDATE #######################
 
-class CampoUpdate(UpdateView):
-    model = Campo
+class MedicosUpdate(UpdateView):
+    model = Cadastro_medicos
     fields = ['nome', 'telefone','email','especialidade',]
     template_name = 'paginas/index.html'
     success_url = reverse_lazy('index')
     
-class EnderecoUpdate(UpdateView):
-    model = Endereco
-    fields = ['cep','logradouro','numero','bairro','cidade','estado',]
-    template_name = 'paginas/index.html'
-    success_url = reverse_lazy('index')

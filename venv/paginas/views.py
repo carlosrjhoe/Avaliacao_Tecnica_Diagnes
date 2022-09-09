@@ -5,8 +5,8 @@ from django.views.generic import TemplateView
 class IndexView(TemplateView):
     template_name = 'paginas/index.html'
 
-class AgendamentoView(TemplateView):
-    template_name = 'paginas/agendamento.html'
+# class AgendamentoView(TemplateView):
+#     template_name = 'paginas/agendamento.html'
 
-class ListagemView(TemplateView):
-    template_name = 'paginas/listagem.html'
+# class ListagemView(TemplateView):
+#     template_name = 'paginas/listagem.html'

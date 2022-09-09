@@ -1,12 +1,8 @@
 from django.urls import path
-from .views import CampoCreate, EnderecoCreate
-from .views import CampoUpdate, EnderecoUpdate
+from .views import MedicosCreate, MedicosUpdate
 
 
 urlpatterns = [
-    path('cadastro/campo', CampoCreate.as_view(), name='cadastro-campo'),
-    path('cadastro/endereco', EnderecoCreate.as_view(), name='cadastro-endereco'),
-    
-    path('editar/campo/<int:pk>', CampoUpdate.as_view(), name='editar-campo'),
-    path('editar/endereco/<int:pk>', EnderecoUpdate.as_view(), name='editar-endereco'),
+    path('cadastro/Cadastro_medicos/', MedicosCreate.as_view(), name='cadastro-campo'),
+    path('editar/Cadastro_medicos/<int:pk>', MedicosUpdate.as_view(), name='editar-campo'),
 ]
