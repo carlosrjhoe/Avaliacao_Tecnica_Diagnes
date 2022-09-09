@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'paginas.apps.PaginasConfig',
-    'cadastro.apps.CadastroConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +119,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static", '/css/estilo.css' 
+    BASE_DIR / "static", '/style.css' 
 ]
 
 # Default primary key field type
