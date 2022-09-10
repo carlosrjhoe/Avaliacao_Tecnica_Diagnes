@@ -31,13 +31,12 @@ class Paciente(models.Model):
         ('O', 'Obstetra'),
     )
      
-    # nome_paciente = models.CharField(max_length=30)
-    # telefone = models.IntegerField(max_length=11)
+    nome_paciente = models.CharField(max_length=30)
+    telefone = models.IntegerField(max_length=11)
     data_consulta = models.DateField(null=False)
     hora = models.TimeField()
-    # especialidade = models.CharField(max_length=1, choices=ESPECIALIDADES_CHOICES, blank=False, null=False)
     
     medico = models.ForeignKey(Medico, on_delete=models.PROTECT)
     
     def __str__(self) -> str:
-        return f'{self.medico.nome} - {self.medico.telefone} - {self.data_consulta} - {self.hora} - {self.medico.especialidade}'
+        return f'{self.nome_paciente} - {self.telefone} - {self.data_consulta} - {self.hora}'
