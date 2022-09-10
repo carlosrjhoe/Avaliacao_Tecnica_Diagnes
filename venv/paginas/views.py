@@ -6,3 +6,4 @@ class IndexView(TemplateView):
     
 class AgendamentoView(TemplateView):
     template_name = 'paginas/agendamento.html'
+    
