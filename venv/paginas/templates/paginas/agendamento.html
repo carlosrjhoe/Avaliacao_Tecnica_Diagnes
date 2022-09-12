@@ -29,8 +29,8 @@
                     <td>{{ paciente.nome_paciente }}</td>
                     <td>{{ paciente.data_consulta }}</td>
                     <td>{{ paciente.hora }}</td>
-                    <td>{{ paciente.medico.nome }}</td>
-                    <td>{{ paciente.medico.especialidade }}</td>
+                    <td>{{ paciente.especialidade.nome }}</td>
+                    <td>{{ paciente.especialidade.especialidade }}</td>
                 </tr>
                 {% empty %}
                 <tr>
