@@ -19,7 +19,7 @@ class PacienteCreate(CreateView):
     model = Paciente
     fields = ['nome_paciente','telefone','data_consulta','hora','especialidade']
     template_name = 'paginas/form.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('agendamento')
     
 
 #################### LIST ####################
