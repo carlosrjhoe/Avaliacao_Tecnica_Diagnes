@@ -30,8 +30,8 @@
                 {% for paciente in object_list %}
                 <tr>
                     <td>{{ paciente.nome_paciente }}</td>
-                    <td>{{ paciente.data_consulta }}</td>
-                    <td>{{ paciente.hora }}</td>
+                    <td>{{ paciente.data_consulta|date:'d/m/Y' }}</td>
+                    <td>{{ paciente.hora|time:'H:i'  }}</td>
                     <td>{{ paciente.especialidade.nome }}</td>
                     <td>{{ paciente.especialidade.especialidade }}</td>
                 </tr>
