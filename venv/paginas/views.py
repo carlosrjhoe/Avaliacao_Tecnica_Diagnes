@@ -1,4 +1,5 @@
 from msilib.schema import Class
+from pipes import Template
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -7,7 +8,7 @@ from .models import Paciente
 
 # Create your views here.
 class IndexView(TemplateView):
-    template_name = 'paginas/index.html'
+    template_name = 'paginas/login.html'
     
 class AgendamentoView(TemplateView):
     template_name = 'paginas/agendamento.html'
