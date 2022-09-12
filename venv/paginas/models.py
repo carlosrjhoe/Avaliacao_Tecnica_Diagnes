@@ -29,9 +29,9 @@ class Medico(models.Model):
 class Paciente(models.Model):
      
     nome_paciente = models.CharField(max_length=30, blank=False)
-    telefone = models.IntegerField(max_length=11, blank=False)
-    data_consulta = models.DateField('data', null=True, blank=True)
-    hora = models.TimeField('hora', null=True, blank=True)
+    telefone = models.IntegerField(null=True, blank=True)
+    data_consulta = models.DateField(max_length=10,null=True, blank=True)
+    hora = models.TimeField(null=True, blank=True)
     
     especialidade = models.ForeignKey(Medico, on_delete=models.PROTECT)
     

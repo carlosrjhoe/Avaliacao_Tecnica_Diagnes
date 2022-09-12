@@ -2,57 +2,56 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Agendamento</title>
-    <link rel="stylesheet" href="{% static 'css\bootstrap.min.css'%}">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css\bootstrap.min.css'%}" />
+  </head>
+  <body>
     <div class="table-responsive">
-        <div class="container">
-            <div>
-                <a href="{% url 'cadastrar-paciente' %}" class="btn btn-primary btn-sm">Marcar Concsulta</a>
-            </div>
-            <div>
-                <h1>Lista de agendamentos marcados</h1>
-            </div>
-            <table class="table table-striped">
-                <tr>
-                    <th>Nome</th>
-                    <th>Data</th>
-                    <th>Hora</th>
-                    <th>Medico</th>
-                    <th>Especialidade</th>
-                </tr>
-
-                {% for paciente in object_list %}
-                <tr>
-                    <td>{{ paciente.nome_paciente }}</td>
-                    <td>{{ paciente.data_consulta|date:'d/m/Y' }}</td>
-                    <td>{{ paciente.hora|time:'H:i'  }}</td>
-                    <td>{{ paciente.especialidade.nome }}</td>
-                    <td>{{ paciente.especialidade.especialidade }}</td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="5" >Nenhum registro de consulta marcada.</td>
-                </tr>
-                {% endfor %}
-
-            </table>
+      <div class="container">
+        <div>
+          <a
+            href="{% url 'cadastrar-paciente' %}"
+            class="btn btn-primary btn-sm"
+            >Marcar Concsulta</a
+          >
         </div>
+        <div>
+          <h1>Lista de agendamentos marcados</h1>
+        </div>
+        <table class="table table-striped">
+          <tr>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Medico</th>
+            <th>Especialidade</th>
+          </tr>
+
+          {% for paciente in object_list %}
+          <tr>
+            <td>{{ paciente.nome_paciente }}</td>
+            <td>{{ paciente.data_consulta }}</td>
+            <td>{{ paciente.hora }}</td>
+            <td>{{ paciente.especialidade.nome }}</td>
+            <td>{{ paciente.especialidade.especialidade }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5">Nenhum registro de consulta marcada.</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
     </div>
     <script src="{% static 'js\jquery-3.6.1.min.js' %}"></script>
     <script>
-
-        $(document).ready(function () {
-            
-            alert("Importação ok!");
-
-        });
-
+      $(document).ready(function () {
+        alert("Importação ok!");
+      });
     </script>
-</body>
+  </body>
 </html>
