@@ -2,27 +2,19 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista de Agendamento</title>
-    <link rel="stylesheet" href="{% static 'css\bootstrap.min.css'%}" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.css"
-    />
-  </head>
-  <body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lista de Agendamento</title>
+        <link rel="stylesheet" href="{% static 'css\bootstrap.min.css'%}" />
+        <link rel="stylesheet"type="text/css"href="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.css"/>
+    </head>
+    <body>
     <div class="table-responsive">
         <div class="container">
             <div>
-                <a
-                    href="{% url 'cadastrar-paciente' %}"
-                    class="btn btn-primary btn-sm"
-                    >Marcar Concsulta</a
-                >
+                <a href="{% url 'cadastrar-paciente' %}" class="btn btn-primary btn-sm" >Marcar Concsulta</a>
             </div>
         <div>
             <h1>Lista de agendamentos marcados</h1>
@@ -53,7 +45,7 @@
                 {% endfor %}
             </tbody>
         </table>
-      </div>
+        </div>
     </div>
     <script src="{% static 'js\jquery-3.6.1.min.js' %}"></script>
     <script
@@ -61,11 +53,40 @@
       src="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.js"
     ></script>
     <script>
-      $(document).ready(function () {
-        
-        $("#tabela").DataTable();
+        $(document).ready(function () {
 
-      });
+            $('#tabela').DataTable({
+            responsive: true,
+            // "bSort": false,
+            "aaSorting": [],
+            "pageLength": 15,
+            "language": {
+                "decimal": "",
+                "emptyTable": "Sem dados disponíveis",
+                "info": "Mostrando de START até END de TOTAL registos",
+                "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                "infoFiltered": "(filtrado de MAX registos no total)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar MENU registos",
+                "loadingRecords": "A carregar dados...",
+                "processing": "A processar...",
+                "search": "Procurar:",
+                "zeroRecords": "Não foram encontrados resultados",
+                "paginate": {
+                    "first": "Primeiro",
+                    "last": "Último",
+                    "next": "Seguinte",
+                    "previous": "Anterior"
+                },
+                "aria": {
+                    "sortAscending": ": ordem crescente",
+                    "sortDescending": ": ordem decrescente"
+                }
+            }
+        });
+
+    });
     </script>
-  </body>
+    </body>
 </html>
