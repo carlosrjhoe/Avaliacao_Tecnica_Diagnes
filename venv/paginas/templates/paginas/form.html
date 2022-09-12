@@ -13,7 +13,14 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
           <h1 class="display-4">Cadastro de consultas</h1>
-          <form action="" method="POST">{% csrf_token %} {{ form.as_p }}</form>
+          <form action="" method="POST">
+            
+            {% csrf_token %} 
+            
+            {{ form.as_p }}
+            
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          </form>
         </div>
     </div>
   </body>
