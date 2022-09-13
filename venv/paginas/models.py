@@ -1,4 +1,7 @@
 from django.db import models
+from datetime import datetime
+from requests import get
+
 
 # Create your models here.
 class Medico(models.Model):
@@ -37,3 +40,7 @@ class Paciente(models.Model):
     
     def __str__(self) -> str:
         return f'{self.nome_paciente} - {self.telefone} - {self.data_consulta} - {self.hora}'
+    
+    def valida_data(self):
+        imput_data = get('paciente.data_consulta')
+        print(f'{imput_data}')

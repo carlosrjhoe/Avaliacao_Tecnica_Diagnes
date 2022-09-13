@@ -33,7 +33,7 @@
                 {% for paciente in object_list %}
                 <tr>
                     <td>{{ paciente.nome_paciente }}</td>
-                    <td>{{ paciente.data_consulta }}</td>
+                    <td>{{ paciente.data_consulta|date:"d/m/Y" }}</td>
                     <td>{{ paciente.hora }}</td>
                     <td>{{ paciente.especialidade.nome }}</td>
                     <td>{{ paciente.especialidade.especialidade }}</td>
@@ -63,7 +63,7 @@
             "language": {
                 "decimal": "",
                 "emptyTable": "Sem dados disponíveis",
-                "info": "Mostrando de START até END de TOTAL registos",
+                "info": "Mostrando o INÍCIO até FIM de TOTAL registos",
                 "infoEmpty": "Mostrando de 0 até 0 de 0 registos",
                 "infoFiltered": "(filtrado de MAX registos no total)",
                 "infoPostFix": "",
